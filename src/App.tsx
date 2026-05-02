@@ -52,9 +52,9 @@ export default function App() {
             </div>
           </nav>
 
-          <button className="bg-cyan-400 text-black px-6 py-2 rounded font-semibold hover:bg-cyan-300 transition">
-            Book a Call
-          </button>
+          <a href="#contact" className="bg-cyan-400 text-black px-6 py-2 rounded font-semibold hover:bg-cyan-300 transition">
+  Book a Call
+</a>
         </div>
       </header>
 
@@ -78,9 +78,9 @@ export default function App() {
           </p>
 
           <div className="flex gap-4 justify-center mb-12">
-            <button className="bg-cyan-400 text-black px-8 py-3 rounded font-semibold hover:bg-cyan-300 transition">
-              Book Strategy Call
-            </button>
+            <a href="#contact" className="bg-cyan-400 text-black px-8 py-3 rounded font-semibold hover:bg-cyan-300 transition">
+  Book Strategy Call
+</a>
             <button className="border border-cyan-500/50 text-white px-8 py-3 rounded hover:bg-cyan-500/10 transition">
               Explore Our Engine
             </button>
