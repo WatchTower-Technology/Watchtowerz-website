@@ -278,25 +278,55 @@ export default function App() {
             <div className="text-gray-400">No obligation</div>
           </div>
 
-          <form onSubmit={(e) => {
-            e.preventDefault();
-            const form = e.currentTarget;
-            const fullName = (form.elements.namedItem('fullName') as HTMLInputElement)?.value || '';
-            const email = (form.elements.namedItem('email') as HTMLInputElement)?.value || '';
-            const company = (form.elements.namedItem('company') as HTMLInputElement)?.value || '';
-            const projectBrief = (form.elements.namedItem('projectBrief') as HTMLTextAreaElement)?.value || '';
+         <form 
+  action="https://formsubmit.co/timiadeleke@watchtowerz.com" 
+  method="POST" 
+  className="space-y-4 mb-8"
+>
+  {/* Honeypot to prevent spam */}
+  <input type="text" name="_honey" style={{ display: 'none' }} />
+  
+  {/* Disable captcha for a smoother experience (optional) */}
+  <input type="hidden" name="_captcha" value="false" />
 
-            const mailtoLink = `mailto:timiadeleke@watchtowerz.com?subject=Strategy Call Request from ${encodeURIComponent(fullName)}&body=Full Name: ${encodeURIComponent(fullName)}%0AWork Email: ${encodeURIComponent(email)}%0ACompany: ${encodeURIComponent(company)}%0AProject Brief: ${encodeURIComponent(projectBrief)}`;
-            window.location.href = mailtoLink;
-          }} className="space-y-4 mb-8">
-            <input type="text" name="fullName" placeholder="Full Name" className="w-full px-6 py-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-white/30 transition backdrop-blur-sm" required />
-            <input type="email" name="email" placeholder="Work Email" className="w-full px-6 py-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-white/30 transition backdrop-blur-sm" required />
-            <input type="text" name="company" placeholder="Company" className="w-full px-6 py-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-white/30 transition backdrop-blur-sm" required />
-            <textarea name="projectBrief" placeholder="Describe your current workflow challenges and automation goals..." className="w-full px-6 py-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-white/30 transition backdrop-blur-sm h-32 resize-none" required />
-            <button type="submit" className="w-full bg-cyan-400 text-black px-8 py-3 rounded font-semibold hover:bg-cyan-300 transition flex items-center justify-center gap-2">
-              Book My Strategy Call <ArrowRight className="w-5 h-5" />
-            </button>
-          </form>
+  <input 
+    type="text" 
+    name="fullName" 
+    placeholder="Full Name" 
+    className="w-full px-6 py-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-white/30 transition backdrop-blur-sm" 
+    required 
+  />
+  
+  <input 
+    type="email" 
+    name="email" 
+    placeholder="Work Email" 
+    className="w-full px-6 py-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-white/30 transition backdrop-blur-sm" 
+    required 
+  />
+  
+  <input 
+    type="text" 
+    name="company" 
+    placeholder="Company" 
+    className="w-full px-6 py-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-white/30 transition backdrop-blur-sm" 
+    required 
+  />
+  
+  <textarea 
+    name="projectBrief" 
+    placeholder="Describe your current workflow challenges and automation goals..." 
+    className="w-full px-6 py-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-white/30 transition backdrop-blur-sm h-32 resize-none" 
+    required 
+  />
+  
+  <button 
+    type="submit" 
+    className="w-full bg-cyan-400 text-black px-8 py-3 rounded font-semibold hover:bg-cyan-300 transition flex items-center justify-center gap-2"
+  >
+    Book My Strategy Call <ArrowRight className="w-5 h-5" />
+  </button>
+</form>
 
           <div className="grid grid-cols-2 gap-4 text-center text-sm">
             <div className="text-gray-400">Results in 30 days</div>
