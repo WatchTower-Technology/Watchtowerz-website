@@ -59,20 +59,19 @@ export default function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative">
+      <section className="pt-40 pb-20 px-6 relative">
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-block mb-6 px-4 py-2 border border-cyan-500/50 rounded-full text-cyan-400 text-sm font-mono">
             AI AUTOMATION & WORKFLOW ARCHITECTURE
           </div>
 
-          <h1 className="text-7xl md:text-8xl font-bold mb-6 leading-tight">
+          <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold mb-6 leading-tight">
             <span className="text-white">Automate the </span>
             <span className="text-cyan-400">Impossible.</span>
             <br />
             <span className="text-white">Scale the </span>
             <span className="text-yellow-400">Extraordinary.</span>
           </h1>
-
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
             We architect custom AI engines that transform manual workflows into <span className="text-white font-semibold">high-velocity growth machines.</span>
           </p>
