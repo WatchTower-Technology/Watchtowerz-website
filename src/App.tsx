@@ -1,8 +1,29 @@
 import { Menu, Zap, Link2, Cpu, ChevronDown, ArrowRight } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showTopBtn, setShowTopBtn] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setShowTopBtn(true);
+      } else {
+        setShowTopBtn(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
   <div className="min-h-screen text-white overflow-hidden relative" style={{ background: 'linear-gradient(135deg, #0a0d13 0%, #08102a 100%)' }}>
@@ -200,10 +221,10 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {[
-              { num: '01', phase: 'PHASE_01', title: 'Audit', subtitle: 'System Diagnosis', desc: 'We dissect your current operations — identifying bottlenecks, redundant processes, and automation opportunities.' },
-              { num: '02', phase: 'PHASE_02', title: 'Architecture', subtitle: 'Blueprint Engineering', desc: 'A precision-designed automation blueprint is crafted — selecting optimal AI models and API integrations.' },
-              { num: '03', phase: 'PHASE_03', title: 'Automation', subtitle: 'Engine Deployment', desc: 'We build and deploy your custom AI engine: fully integrated, rigorously tested, and wired into your systems.' },
-              { num: '04', phase: 'PHASE_04', title: 'Acceleration', subtitle: 'Continuous Optimization', desc: 'Post-launch, our systems continuously monitor, learn, and self-optimize — compounding returns month after month.' },
+              { num: '01', phase: 'PHASE_01', title: 'Audit', subtitle: 'System Diagnosis', desc: 'We dissect your current operations — identifying bottlenecks, redundant processes, and automation o[...]
+              { num: '02', phase: 'PHASE_02', title: 'Architecture', subtitle: 'Blueprint Engineering', desc: 'A precision-designed automation blueprint is crafted — selecting optimal AI models and [...]
+              { num: '03', phase: 'PHASE_03', title: 'Automation', subtitle: 'Engine Deployment', desc: 'We build and deploy your custom AI engine: fully integrated, rigorously tested, and wired into [...]
+              { num: '04', phase: 'PHASE_04', title: 'Acceleration', subtitle: 'Continuous Optimization', desc: 'Post-launch, our systems continuously monitor, learn, and self-optimize — compounding[...]
             ].map((step, idx) => {
               const colors = [
                 { bg: 'bg-cyan-500/10', border: 'border-cyan-400', text: 'text-cyan-400' },
@@ -358,6 +379,17 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {/* Back to Top Button */}
+      {showTopBtn && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 z-50 border border-cyan-400 bg-black px-4 py-4 rounded hover:bg-cyan-400/10 transition flex items-center justify-center"
+          aria-label="Back to top"
+        >
+          <ChevronDown className="w-5 h-5 text-cyan-400 rotate-180" />
+        </button>
+      )}
     </div>
   );
 }
