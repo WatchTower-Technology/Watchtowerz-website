@@ -26,7 +26,7 @@ export default function App() {
   };
 
   return (
-  <div className="min-h-screen text-white relative" style={{ background: 'linear-gradient(135deg, #0a0d13 0%, #08102a 100%)' }}>
+  <div className="min-h-screen text-white overflow-hidden relative" style={{ background: 'linear-gradient(135deg, #0a0d13 0%, #08102a 100%)' }}>
       {/* The Star/Dot Layer */}
       <div 
         className="absolute inset-0 pointer-events-none" 
@@ -221,10 +221,10 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {[
-              { num: '01', phase: 'PHASE_01', title: 'Audit', subtitle: 'System Diagnosis', desc: 'We dissect your current operations — identifying bottlenecks, redundant processes, and automat[...]
-              { num: '02', phase: 'PHASE_02', title: 'Architecture', subtitle: 'Blueprint Engineering', desc: 'A precision-designed automation blueprint is crafted — selecting optimal AI models[...]
-              { num: '03', phase: 'PHASE_03', title: 'Automation', subtitle: 'Engine Deployment', desc: 'We build and deploy your custom AI engine: fully integrated, rigorously tested, and wired [...]
-              { num: '04', phase: 'PHASE_04', title: 'Acceleration', subtitle: 'Continuous Optimization', desc: 'Post-launch, our systems continuously monitor, learn, and self-optimize — compou[...]
+              { num: '01', phase: 'PHASE_01', title: 'Audit', subtitle: 'System Diagnosis', desc: 'We dissect your current operations — identifying bottlenecks, redundant processes, and automation opportunities unique to your business.' },
+              { num: '02', phase: 'PHASE_02', title: 'Architecture', subtitle: 'Blueprint Engineering', desc: 'A precision-designed automation blueprint is crafted — selecting optimal AI models and integration pathways for maximum impact.' },
+              { num: '03', phase: 'PHASE_03', title: 'Automation', subtitle: 'Engine Deployment', desc: 'We build and deploy your custom AI engine: fully integrated, rigorously tested, and wired into your operational workflow.' },
+              { num: '04', phase: 'PHASE_04', title: 'Acceleration', subtitle: 'Continuous Optimization', desc: 'Post-launch, our systems continuously monitor, learn, and self-optimize — compounding efficiency gains month after month.' }
             ].map((step, idx) => {
               const colors = [
                 { bg: 'bg-cyan-500/10', border: 'border-cyan-400', text: 'text-cyan-400' },
@@ -289,8 +289,7 @@ export default function App() {
           <div className="text-center mb-12">
             <div className="text-cyan-400 text-sm font-mono mb-4">// INITIATE ENGAGEMENT</div>
             <h2 className="text-5xl font-bold mb-4">Ready to Build Your Digital Twin?</h2>
-            <p className="text-gray-400">Schedule a strategy call. We'll audit your workflow, identify your highest-leverage automation opportunities, and present a custom roadmap — in 48 hours[...]
-            </p>
+            <p className="text-gray-400">Schedule a strategy call. We'll audit your workflow, identify your highest-leverage automation opportunities, and present a custom roadmap — in 48 hours.</p>
           </div>
 
           <div className="grid grid-cols-3 gap-4 mb-8 text-center text-sm">
