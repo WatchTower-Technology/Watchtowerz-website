@@ -334,15 +334,28 @@ export default function App() {
       </section>
 
       {/* Footer */}
+     {/* Footer */}
       <footer className="border-t border-cyan-500/10 px-6 py-8">
-        <div className="max-w-6xl mx-auto flex items-center justify-between text-sm">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-center md:text-left">
+          {/* Logo & Brand */}
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-cyan-400 rounded-full" />
             <span className="font-semibold">WATCHTOWERZ.</span>
             <span className="text-gray-500 ml-2">AI Automation</span>
           </div>
-          <span className="text-gray-500">© 2026 Watchtowerz Technology. All rights reserved.</span>
-          <span className="text-gray-500">SYSTEM: OPERATIONAL</span>
+
+          {/* Copyright */}
+          <span className="text-gray-500 order-3 md:order-2">
+            © 2026 Watchtowerz Technology. All rights reserved.
+          </span>
+
+          {/* Status Indicator */}
+          <div className="flex items-center gap-2 order-2 md:order-3">
+            <span className="w-2 h-2 bg-cyan-400 rounded-full animate-ping shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
+            <span className="text-cyan-400 font-mono text-xs tracking-widest">
+              SYSTEM: OPERATIONAL
+            </span>
+          </div>
         </div>
       </footer>
     </div>
