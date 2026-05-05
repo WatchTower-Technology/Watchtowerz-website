@@ -3,28 +3,7 @@ import { useState } from 'react';
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-const [showTopBtn, setShowTopBtn] = useState(false);
-const [showTopBtn, setShowTopBtn] = useState(false);
 
-  // Correct way to handle scroll in React
-  import { useEffect } from 'react'; // Ensure this is at the very top of your file
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 400) {
-        setShowTopBtn(true);
-      } else {
-        setShowTopBtn(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const goToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
   return (
   <div className="min-h-screen text-white overflow-hidden relative" style={{ background: 'linear-gradient(135deg, #0a0d13 0%, #08102a 100%)' }}>
       {/* The Star/Dot Layer */}
