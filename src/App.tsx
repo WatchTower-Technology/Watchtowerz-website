@@ -10,8 +10,8 @@ export default function App() {
       <div 
         className="absolute inset-0 pointer-events-none" 
         style={{ 
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0, 255, 255, 0.07) 1px, transparent 0)`,
-          backgroundSize: '40px 40px' 
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0, 255, 255, 0.3) 1px, transparent 0)`,
+          backgroundSize: '30px 30px' 
         }} 
       />
 
@@ -200,10 +200,10 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {[
-              { num: '01', phase: 'PHASE_01', title: 'Audit', subtitle: 'System Diagnosis', desc: 'We dissect your current operations — identifying bottlenecks, redundant processes, and automation opportunities worth millions.' },
-              { num: '02', phase: 'PHASE_02', title: 'Architecture', subtitle: 'Blueprint Engineering', desc: 'A precision-designed automation blueprint is crafted — selecting optimal AI models, APIs, and workflow structures for your stack.' },
-              { num: '03', phase: 'PHASE_03', title: 'Automation', subtitle: 'Engine Deployment', desc: 'We build and deploy your custom AI engine: fully integrated, rigorously tested, and wired into your existing infrastructure.' },
-              { num: '04', phase: 'PHASE_04', title: 'Acceleration', subtitle: 'Continuous Optimization', desc: 'Post-launch, our systems continuously monitor, learn, and self-optimize — compounding your ROI every single day.' },
+              { num: '01', phase: 'PHASE_01', title: 'Audit', subtitle: 'System Diagnosis', desc: 'We dissect your current operations — identifying bottlenecks, redundant processes, and automation opportunities.' },
+              { num: '02', phase: 'PHASE_02', title: 'Architecture', subtitle: 'Blueprint Engineering', desc: 'A precision-designed automation blueprint is crafted — selecting optimal AI models and API integrations.' },
+              { num: '03', phase: 'PHASE_03', title: 'Automation', subtitle: 'Engine Deployment', desc: 'We build and deploy your custom AI engine: fully integrated, rigorously tested, and wired into your systems.' },
+              { num: '04', phase: 'PHASE_04', title: 'Acceleration', subtitle: 'Continuous Optimization', desc: 'Post-launch, our systems continuously monitor, learn, and self-optimize — compounding returns month after month.' },
             ].map((step, idx) => {
               const colors = [
                 { bg: 'bg-cyan-500/10', border: 'border-cyan-400', text: 'text-cyan-400' },
