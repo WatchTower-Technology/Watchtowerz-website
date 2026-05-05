@@ -3,7 +3,23 @@ import { useState } from 'react';
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+const [showTopBtn, setShowTopBtn] = useState(false);
 
+  // Show button when page is scrolled down 400px
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      setShowTopBtn(true);
+    } else {
+      setShowTopBtn(false);
+    }
+  });
+
+  const goToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   return (
   <div className="min-h-screen text-white overflow-hidden relative" style={{ background: 'linear-gradient(135deg, #0a0d13 0%, #08102a 100%)' }}>
       {/* The Star/Dot Layer */}
