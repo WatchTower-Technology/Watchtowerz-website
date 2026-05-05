@@ -5,16 +5,18 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-  <div 
-      className="min-h-screen text-white overflow-hidden relative" 
-      style={{ 
-        background: 'linear-gradient(135deg, #0a0d13 0%, #08102a 100%)',
-        backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0, 255, 255, 0.15) 1px, transparent 0)`,
-        backgroundSize: '40px 40px' 
-      }}
-    >
+  <div className="min-h-screen text-white overflow-hidden relative" style={{ background: 'linear-gradient(135deg, #0a0d13 0%, #08102a 100%)' }}>
+      {/* The Star/Dot Layer */}
+      <div 
+        className="absolute inset-0 pointer-events-none" 
+        style={{ 
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0, 255, 255, 0.07) 1px, transparent 0)`,
+          backgroundSize: '40px 40px' 
+        }} 
+      />
+
       {/* Gradient mesh background */}
-      <div className="fixed inset-0 -z-10 opacity-50">
+      <div className="fixed inset-0 -z-10">
         <svg className="w-full h-full" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1200 800">
           <defs>
             <filter id="blur">
@@ -26,15 +28,9 @@ export default function App() {
               <stop offset="100%" stopColor="#08102a" stopOpacity="0.1" />
             </radialGradient>
           </defs>
-          
-          {/* Base gradient mesh */}
           <rect width="1200" height="800" fill="url(#meshGradient)" />
-
-          {/* Soft circular bloom top right */}
           <circle cx="900" cy="150" r="300" fill="#00FFFF" opacity="0.15" filter="url(#blur)" />
           <circle cx="950" cy="200" r="250" fill="#00FFFF" opacity="0.08" filter="url(#blur)" />
-
-          {/* Additional subtle mesh points */}
           <circle cx="150" cy="650" r="200" fill="#00FFFF" opacity="0.05" filter="url(#blur)" />
           <circle cx="1000" cy="700" r="280" fill="#00FFFF" opacity="0.06" filter="url(#blur)" />
         </svg>
