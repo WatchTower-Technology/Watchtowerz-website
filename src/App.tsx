@@ -5,25 +5,30 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen text-white overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a0d13 0%, #08102a 100%)' }}>
+  <div 
+      className="min-h-screen text-white overflow-hidden relative" 
+      style={{ 
+        background: 'linear-gradient(135deg, #0a0d13 0%, #08102a 100%)',
+        backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0, 255, 255, 0.15) 1px, transparent 0)`,
+        backgroundSize: '40px 40px' 
+      }}
+    >
       {/* Gradient mesh background */}
-      <div className="fixed inset-0 -z-10">
+      <div className="fixed inset-0 -z-10 opacity-50">
         <svg className="w-full h-full" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1200 800">
           <defs>
             <filter id="blur">
               <feGaussianBlur in="SourceGraphic" stdDeviation="40" />
             </filter>
-          </defs>
-          {/* Base gradient mesh */}
-          <rect width="1200" height="800" fill="url(#meshGradient)" />
-
-          <defs>
             <radialGradient id="meshGradient" cx="75%" cy="20%" r="60%">
               <stop offset="0%" stopColor="#00FFFF" stopOpacity="0.3" />
               <stop offset="30%" stopColor="#0a0d13" stopOpacity="0.2" />
               <stop offset="100%" stopColor="#08102a" stopOpacity="0.1" />
             </radialGradient>
           </defs>
+          
+          {/* Base gradient mesh */}
+          <rect width="1200" height="800" fill="url(#meshGradient)" />
 
           {/* Soft circular bloom top right */}
           <circle cx="900" cy="150" r="300" fill="#00FFFF" opacity="0.15" filter="url(#blur)" />
@@ -34,7 +39,6 @@ export default function App() {
           <circle cx="1000" cy="700" r="280" fill="#00FFFF" opacity="0.06" filter="url(#blur)" />
         </svg>
       </div>
-
       {/* Header */}
       <header className="fixed top-0 w-full z-50 backdrop-blur-md bg-black/50 border-b border-cyan-500/10">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -80,9 +84,9 @@ export default function App() {
             <a href="#contact" className="bg-cyan-400 text-black px-8 py-3 rounded font-semibold hover:bg-cyan-300 transition">
   Book Strategy Call
 </a>
-            <button className="border border-cyan-500/50 text-white px-8 py-3 rounded hover:bg-cyan-500/10 transition">
-              Explore Our Engine
-            </button>
+           <a href="#services" className="border border-cyan-500/50 text-white px-8 py-3 rounded hover:bg-cyan-500/10 transition inline-block">
+  Explore Our Engine
+</a>
           </div>
         </div>
 
