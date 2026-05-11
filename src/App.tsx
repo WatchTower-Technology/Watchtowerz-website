@@ -63,12 +63,12 @@ export default function App() {
       answer: 'Yes. Our AI engine integrates with 200+ platforms including Salesforce, HubSpot, Zapier, n8n, Make.com, and custom APIs. If your tool exists, we can connect it.'
     },
     {
-      question: 'What if we're not satisfied?',
+      question: 'What if we\'re not satisfied?',
       answer: 'We offer a 30-day money-back guarantee. No questions asked. But 98% of our clients renew because the results speak for themselves.'
     },
     {
       question: 'How much does it cost?',
-      answer: 'Pricing starts at $2,999/month for Starter automation and scales based on complexity. Most clients see ROI within 30 days. We'll provide a custom quote after your audit.'
+      answer: 'Pricing starts at $2,999/month for Starter automation and scales based on complexity. Most clients see ROI within 30 days. We\'ll provide a custom quote after your audit.'
     },
     {
       question: 'Do you provide ongoing support?',
