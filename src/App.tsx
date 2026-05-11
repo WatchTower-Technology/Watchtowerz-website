@@ -387,10 +387,10 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {[
-              { num: '01', phase: 'PHASE_01', title: 'Audit', subtitle: 'System Diagnosis', desc: 'We dissect your current operations — identifying bottlenecks, redundant processes, and automation opportunities unique to your business.' },
-              { num: '02', phase: 'PHASE_02', title: 'Architecture', subtitle: 'Blueprint Engineering', desc: 'A precision-designed automation blueprint is crafted — selecting optimal AI models and integration pathways for maximum impact.' },
-              { num: '03', phase: 'PHASE_03', title: 'Automation', subtitle: 'Engine Deployment', desc: 'We build and deploy your custom AI engine: fully integrated, rigorously tested, and wired into your operational workflow.' },
-              { num: '04', phase: 'PHASE_04', title: 'Acceleration', subtitle: 'Continuous Optimization', desc: 'Post-launch, our systems continuously monitor, learn, and self-optimize — compounding efficiency gains month after month.' }
+              { num: '01', phase: 'PHASE_01', title: 'Audit', subtitle: 'System Diagnosis', desc: 'We dissect your current operations — identifying bottlenecks, redundant processes, and automation opportunities with precision data analysis.' },
+              { num: '02', phase: 'PHASE_02', title: 'Architecture', subtitle: 'Blueprint Engineering', desc: 'A precision-designed automation blueprint is crafted — selecting optimal AI models, integration points, and execution sequences.' },
+              { num: '03', phase: 'PHASE_03', title: 'Automation', subtitle: 'Engine Deployment', desc: 'We build and deploy your custom AI engine: fully integrated, rigorously tested, and wired to your existing systems.' },
+              { num: '04', phase: 'PHASE_04', title: 'Acceleration', subtitle: 'Continuous Optimization', desc: 'Post-launch, our systems continuously monitor, learn, and self-optimize — compounding results every single day.' }
             ].map((step, idx) => {
               const colors = [
                 { bg: 'bg-cyan-500/10', border: 'border-cyan-400', text: 'text-cyan-400' },
@@ -466,7 +466,7 @@ export default function App() {
 
           <div className="grid grid-cols-2 md:grid-cols-6 gap-6 mb-16">
             {['Base44', 'n8n', 'OpenAI', 'Make.com', 'Zapier', 'Claude'].map((partner, i) => (
-              <div key={i} className="flex items-center justify-center p-6 rounded-lg border border-white/10 bg-white/5 hover:border-cyan-400/50 hover:shadow-[0_0_20px_rgba(0,255,255,0.2)] transition backdrop-blur-md">
+              <div key={i} className="flex items-center justify-center p-6 rounded-lg border border-white/10 bg-white/5 hover:border-cyan-400/50 hover:shadow-[0_0_20px_rgba(0,255,255,0.2)] transition">
                 <span className="text-gray-300 font-semibold">{partner}</span>
               </div>
             ))}
@@ -847,7 +847,7 @@ export default function App() {
       {showTopBtn && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 border border-cyan-400 bg-black p-3 rounded-lg hover:bg-cyan-400/20 transition transform hover:scale-110 hover:shadow-[0_0_20px_rgba(0,255,255,0.4)] group"
+          className="fixed bottom-8 right-8 z-50 border border-cyan-400 bg-black p-3 rounded-lg hover:bg-cyan-400/20 transition transform hover:scale-110 hover:shadow-[0_0_20px_rgba(0,255,255,0.4)]"
           aria-label="Back to top"
         >
           <ChevronDown className="w-5 h-5 text-cyan-400 rotate-180 group-hover:animate-bounce" />
