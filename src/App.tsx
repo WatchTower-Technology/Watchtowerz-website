@@ -126,7 +126,26 @@ export default function App() {
       best: false
     }
   ];
-
+ const blogPosts = [
+    {
+      title: 'How AI Automation Increased Revenue by 340%',
+      category: 'Case Study',
+      date: 'May 3, 2026',
+      excerpt: 'A deep dive into how our tech transformed a B2B SaaS company sales process...'
+    },
+    {
+      title: 'The Hidden Costs of Manual Workflows',
+      category: 'Education',
+      date: 'April 28, 2026',
+      excerpt: 'Most companies waste $50K+ annually on manual processes. Here\'s how to calculate your cost...'
+    },
+    {
+      title: 'AI Automation Trends for 2026',
+      category: 'Insights',
+      date: 'April 22, 2026',
+      excerpt: 'What\'s happening in AI automation and why every business needs to pay attention...'
+    }
+  ];
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 400) {
