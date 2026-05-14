@@ -244,9 +244,7 @@ export default function App() {
             <a href="#contact" className="bg-cyan-400 text-black px-8 py-3 rounded font-semibold hover:bg-cyan-300 transition transform hover:scale-105">
               Book Strategy Call
             </a>
-            <button onClick={() => setShowVideoModal(true)} className="border border-cyan-500/50 text-white px-8 py-3 rounded hover:bg-cyan-500/10 transition inline-flex items-center gap-2">
-              <Play className="w-4 h-4" /> Watch Demo
-            </button>
+          
           </div>
         </div>
 
