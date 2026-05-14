@@ -79,7 +79,7 @@ export default function App() {
   const pricingPlans = [
     {
       name: 'Starter',
-      price: '$2,999',
+      price: '$1,999',
       period: '/month',
       description: 'Perfect for small teams automating 1-2 core workflows',
       features: [
@@ -94,7 +94,7 @@ export default function App() {
     },
     {
       name: 'Professional',
-      price: '$7,999',
+      price: '$6,999',
       period: '/month',
       description: 'Most popular. For teams scaling 3-5 workflows',
       features: [
@@ -124,27 +124,6 @@ export default function App() {
         'White-label options'
       ],
       best: false
-    }
-  ];
-
-  const blogPosts = [
-    {
-      title: 'How AI Automation Increased Revenue by 340%',
-      category: 'Case Study',
-      date: 'May 3, 2026',
-      excerpt: 'A deep dive into how our tech transformed a B2B SaaS company sales process...'
-    },
-    {
-      title: 'The Hidden Costs of Manual Workflows',
-      category: 'Education',
-      date: 'April 28, 2026',
-      excerpt: 'Most companies waste $50K+ annually on manual processes. Here\'s how to calculate your cost...'
-    },
-    {
-      title: 'AI Automation Trends for 2026',
-      category: 'Insights',
-      date: 'April 22, 2026',
-      excerpt: 'What\'s happening in AI automation and why every business needs to pay attention...'
     }
   ];
 
