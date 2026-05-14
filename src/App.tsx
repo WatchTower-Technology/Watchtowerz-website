@@ -6,7 +6,6 @@ export default function App() {
   const [showTopBtn, setShowTopBtn] = useState(false);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [expandedFaq, setExpandedFaq] = useState(null);
-  const [showEmailPopup, setShowEmailPopup] = useState(false);
   const [selectedPricing, setSelectedPricing] = useState('starter');
   const [showVideoModal, setShowVideoModal] = useState(false);
 
@@ -126,26 +125,7 @@ export default function App() {
       best: false
     }
   ];
- const blogPosts = [
-    {
-      title: 'How AI Automation Increased Revenue by 340%',
-      category: 'Case Study',
-      date: 'May 3, 2026',
-      excerpt: 'A deep dive into how our tech transformed a B2B SaaS company sales process...'
-    },
-    {
-      title: 'The Hidden Costs of Manual Workflows',
-      category: 'Education',
-      date: 'April 28, 2026',
-      excerpt: 'Most companies waste $50K+ annually on manual processes. Here\'s how to calculate your cost...'
-    },
-    {
-      title: 'AI Automation Trends for 2026',
-      category: 'Insights',
-      date: 'April 22, 2026',
-      excerpt: 'What\'s happening in AI automation and why every business needs to pay attention...'
-    }
-  ];
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 400) {
@@ -173,12 +153,12 @@ export default function App() {
   return (
     <div className="min-h-screen text-white overflow-hidden relative" style={{ background: 'linear-gradient(135deg, #0a0d13 0%, #08102a 100%)' }}>
       {/* The Star/Dot Layer */}
-      <div 
-        className="absolute inset-0 pointer-events-none" 
-        style={{ 
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
           backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0, 255, 255, 0.3) 1px, transparent 0)`,
-          backgroundSize: '30px 30px' 
-        }} 
+          backgroundSize: '30px 30px'
+        }}
       />
 
       {/* Gradient mesh background */}
@@ -227,7 +207,6 @@ export default function App() {
               <a href="#services" className="text-gray-400 hover:text-white transition">Services</a>
               <a href="#process" className="text-gray-400 hover:text-white transition">Process</a>
               <a href="#pricing" className="text-gray-400 hover:text-white transition">Pricing</a>
-              <a href="#blog" className="text-gray-400 hover:text-white transition">Blog</a>
               <a href="#contact" className="text-gray-400 hover:text-white transition">Contact</a>
             </div>
           </nav>
@@ -618,35 +597,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Blog Section */}
-      <section id="blog" className="py-20 px-6 border-t border-cyan-500/10">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="text-cyan-400 text-sm font-mono mb-4">// INSIGHTS & KNOWLEDGE</div>
-            <h2 className="text-5xl font-bold mb-4">
-              <span className="text-white">Latest from the </span>
-              <span className="text-cyan-400">Blog</span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {blogPosts.map((post, idx) => (
-              <div key={idx} className="border border-white/10 rounded-lg bg-white/5 p-6 hover:border-white/20 hover:shadow-[0_0_20px_rgba(0,255,255,0.1)] transition backdrop-blur-md cursor-pointer">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-bold text-cyan-400 bg-cyan-500/20 px-3 py-1 rounded-full">{post.category}</span>
-                  <span className="text-xs text-gray-500">{post.date}</span>
-                </div>
-                <h3 className="text-xl font-bold mb-3">{post.title}</h3>
-                <p className="text-gray-400 mb-4">{post.excerpt}</p>
-                <a href="#" className="text-cyan-400 text-sm font-semibold hover:text-cyan-300 flex items-center gap-2">
-                  Read More <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Risk Reversal Section */}
       <section className="py-20 px-6 border-t border-cyan-500/10">
         <div className="max-w-4xl mx-auto">
@@ -768,47 +718,47 @@ export default function App() {
             <div className="text-gray-400">✓ No obligation</div>
           </div>
 
-          <form 
-            action="https://formsubmit.co/timiadeleke@watchtowerz.com" 
-            method="POST" 
+          <form
+            action="https://formsubmit.co/timiadeleke@watchtowerz.com"
+            method="POST"
             className="space-y-4 mb-8"
           >
             <input type="text" name="_honey" style={{ display: 'none' }} />
             <input type="hidden" name="_captcha" value="false" />
 
-            <input 
-              type="text" 
-              name="fullName" 
-              placeholder="Full Name" 
-              className="w-full px-6 py-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 transition backdrop-blur-sm" 
-              required 
+            <input
+              type="text"
+              name="fullName"
+              placeholder="Full Name"
+              className="w-full px-6 py-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 transition backdrop-blur-sm"
+              required
             />
-            
-            <input 
-              type="email" 
-              name="email" 
-              placeholder="Work Email" 
-              className="w-full px-6 py-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 transition backdrop-blur-sm" 
-              required 
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Work Email"
+              className="w-full px-6 py-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 transition backdrop-blur-sm"
+              required
             />
-            
-            <input 
-              type="text" 
-              name="company" 
-              placeholder="Company" 
-              className="w-full px-6 py-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 transition backdrop-blur-sm" 
-              required 
+
+            <input
+              type="text"
+              name="company"
+              placeholder="Company"
+              className="w-full px-6 py-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 transition backdrop-blur-sm"
+              required
             />
-            
-            <textarea 
-              name="projectBrief" 
-              placeholder="Describe your current workflow challenges and automation goals..." 
-              className="w-full px-6 py-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 transition backdrop-blur-sm h-32 resize-none" 
-              required 
+
+            <textarea
+              name="projectBrief"
+              placeholder="Describe your current workflow challenges and automation goals..."
+              className="w-full px-6 py-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 transition backdrop-blur-sm h-32 resize-none"
+              required
             />
-            
-            <button 
-              type="submit" 
+
+            <button
+              type="submit"
               className="w-full bg-cyan-400 text-black px-8 py-3 rounded font-semibold hover:bg-cyan-300 transition transform hover:scale-105 flex items-center justify-center gap-2"
             >
               Book My Strategy Call <ArrowRight className="w-5 h-5" />
@@ -868,23 +818,6 @@ export default function App() {
                 <p className="text-gray-400">Video Demo Coming Soon</p>
               </div>
             </div>
-          </div>
-        </div>
-      )}
-
-      {/* Exit Intent Email Popup */}
-      {showEmailPopup && (
-        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-          <div className="bg-gradient-to-br from-black to-gray-900 border border-cyan-400 rounded-lg max-w-md w-full p-8">
-            <h3 className="text-2xl font-bold mb-2">Wait! Get 30% Off</h3>
-            <p className="text-gray-400 mb-6">Join our email list and receive exclusive automation tips + 30% off your first month.</p>
-            <input type="email" placeholder="Your email..." className="w-full px-4 py-2 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 transition mb-4" />
-            <button className="w-full bg-cyan-400 text-black px-6 py-2 rounded font-semibold hover:bg-cyan-300 transition">
-              Claim 30% Off
-            </button>
-            <button onClick={() => setShowEmailPopup(false)} className="w-full mt-3 text-gray-400 hover:text-white transition text-sm">
-              No thanks
-            </button>
           </div>
         </div>
       )}
