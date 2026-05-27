@@ -342,8 +342,8 @@ export default function App() {
             {[
               { num: '01', phase: 'PHASE_01', title: 'Audit', subtitle: 'System Diagnosis', desc: 'We dissect your current operations — identifying bottlenecks, redundant processes, and automation opportunities.' },
               { num: '02', phase: 'PHASE_02', title: 'Architecture', subtitle: 'Blueprint Engineering', desc: 'A precision-designed automation blueprint is crafted — selecting optimal AI models, workflows, and integrations.' },
-              { num: '03', phase: 'PHASE_03', title: 'Automation', subtitle: 'Engine Deployment', desc: 'We build and deploy your custom AI engine: fully integrated, rigorously tested, and wired into production.' },
-              { num: '04', phase: 'PHASE_04', title: 'Acceleration', subtitle: 'Continuous Optimization', desc: 'Post-launch, our systems continuously monitor, learn, and self-optimize — compounding returns over time.' },
+              { num: '03', phase: 'PHASE_03', title: 'Automation', subtitle: 'Engine Deployment', desc: 'We build and deploy your custom AI engine: fully integrated, rigorously tested, and wired into your systems.' },
+              { num: '04', phase: 'PHASE_04', title: 'Acceleration', subtitle: 'Continuous Optimization', desc: 'Post-launch, our systems continuously monitor, learn, and self-optimize — compounding results monthly.' }
             ].map((step, idx) => {
               const colors = [
                 { bg: 'bg-cyan-500/10', border: 'border-cyan-400', text: 'text-cyan-400' },
@@ -417,8 +417,8 @@ export default function App() {
             <h2 className="text-5xl font-bold mb-4">Trusted Integration Partners</h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 mb-16">
-            {['Base44', 'n8n', 'OpenAI', 'Make.com', 'Zapier', 'Claude'].map((partner, i) => (
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-16">
+            {['n8n', 'OpenAI', 'Make.com', 'Zapier', 'Claude'].map((partner, i) => (
               <div key={i} className="flex items-center justify-center p-6 rounded-lg border border-white/10 bg-white/5 hover:border-cyan-400/50 hover:shadow-[0_0_20px_rgba(0,255,255,0.2)] transition">
                 <span className="text-gray-300 font-semibold">{partner}</span>
               </div>
@@ -447,7 +447,7 @@ export default function App() {
 
       {/* Pricing Section - Simplified */}
       <section id="pricing" className="py-20 px-6 border-t border-cyan-500/10">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <div className="text-cyan-400 text-sm font-mono mb-4">// TRANSPARENT PRICING</div>
             <h2 className="text-5xl font-bold mb-4">
@@ -460,9 +460,9 @@ export default function App() {
           {/* Pricing Options Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {pricingPlans.map((plan, idx) => (
-              <div key={idx} className="text-center p-8 rounded-lg border border-white/10 bg-white/5 hover:border-cyan-400/50 hover:shadow-[0_0_20px_rgba(0,255,255,0.2)] transition backdrop-blur-md">
+              <div key={idx} className="flex flex-col text-center p-8 rounded-lg border border-white/10 bg-white/5 hover:border-cyan-400/50 hover:shadow-[0_0_20px_rgba(0,255,255,0.2)] transition backdrop-blur-md">
                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <p className="text-gray-400 text-sm mb-4">{plan.description}</p>
+                <p className="text-gray-400 text-sm mb-4 flex-grow">{plan.description}</p>
                 <div className="mb-6">
                   <span className="text-4xl font-bold text-cyan-400">{plan.price}</span>
                   {plan.price !== 'Custom' && <span className="text-gray-400 text-sm ml-2">/month</span>}
@@ -538,7 +538,7 @@ export default function App() {
                 >
                   <h3 className="font-bold text-lg text-left">{faq.question}</h3>
                   <ChevronDown
-                    className={`w-5 h-5 text-cyan-400 transition transform ${expandedFaq === idx ? 'rotate-180' : ''}`}
+                    className={`w-5 h-5 text-cyan-400 transition transform flex-shrink-0 ml-4 ${expandedFaq === idx ? 'rotate-180' : ''}`}
                   />
                 </button>
                 {expandedFaq === idx && (
@@ -664,7 +664,7 @@ export default function App() {
           <div className="text-center mb-12">
             <div className="text-cyan-400 text-sm font-mono mb-4">// INITIATE ENGAGEMENT</div>
             <h2 className="text-5xl font-bold mb-4">Ready to Build Your Digital Twin?</h2>
-            <p className="text-gray-400">Schedule a strategy call or inquire about pricing. We'll audit your workflow, identify your highest-leverage automation opportunities, and present a custom roadmap — in 48 hours.</p>
+            <p className="text-gray-400">Schedule a strategy call or inquire about pricing. We'll audit your workflow, identify your highest-leverage automation opportunities, and present a custom roadmap.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 text-center text-sm">
