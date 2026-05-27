@@ -78,12 +78,12 @@ export default function App() {
   const pricingPlans = [
     {
       name: 'Starter',
-      price: '$1,999',
+      price: '$1,499',
       description: 'Perfect for small teams automating 1-2 core workflows'
     },
     {
       name: 'Professional',
-      price: '$6,999',
+      price: '$4,999',
       description: 'Most popular. For teams scaling 3-5 workflows'
     },
     {
