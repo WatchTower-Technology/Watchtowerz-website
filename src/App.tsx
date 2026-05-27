@@ -6,7 +6,7 @@ export default function App() {
   const [showTopBtn, setShowTopBtn] = useState(false);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [expandedFaq, setExpandedFaq] = useState(null);
-  const [selectedPricing, setSelectedPricing] = useState('starter');
+  const [selectedPlan, setSelectedPlan] = useState(null);
   const [showVideoModal, setShowVideoModal] = useState(false);
 
   const testimonials = [
@@ -67,7 +67,7 @@ export default function App() {
     },
     {
       question: 'How much does it cost?',
-      answer: 'Pricing starts at $2,999/month for Starter automation and scales based on complexity. Most clients see ROI within 30 days. We\'ll provide a custom quote after your audit.'
+      answer: 'Pricing starts at $1,999/month for Starter automation and scales based on complexity. Most clients see ROI within 30 days. We\'ll provide a custom quote after your audit.'
     },
     {
       question: 'Do you provide ongoing support?',
@@ -79,50 +79,17 @@ export default function App() {
     {
       name: 'Starter',
       price: '$1,999',
-      period: '/month',
-      description: 'Perfect for small teams automating 1-2 core workflows',
-      features: [
-        'Single workflow automation',
-        'Up to 2 integrations',
-        'Basic AI modules',
-        'Email support',
-        '72-hour deployment',
-        '2-hour response time'
-      ],
-      best: false
+      description: 'Perfect for small teams automating 1-2 core workflows'
     },
     {
       name: 'Professional',
       price: '$6,999',
-      period: '/month',
-      description: 'Most popular. For teams scaling 3-5 workflows',
-      features: [
-        'Up to 5 workflow automations',
-        'Up to 10 integrations',
-        'Advanced AI modules',
-        'Priority support (1-hour response)',
-        'Custom AI training',
-        'Monthly optimization calls',
-        'Analytics dashboard'
-      ],
-      best: true
+      description: 'Most popular. For teams scaling 3-5 workflows'
     },
     {
       name: 'Enterprise',
       price: 'Custom',
-      period: 'pricing',
-      description: 'For large organizations with complex needs',
-      features: [
-        'Unlimited workflows',
-        'Unlimited integrations',
-        'Custom AI models',
-        '24/7 dedicated support',
-        'Advanced AI training',
-        'Weekly strategy calls',
-        'Custom integrations & APIs',
-        'White-label options'
-      ],
-      best: false
+      description: 'For large organizations with complex needs'
     }
   ];
 
@@ -148,6 +115,17 @@ export default function App() {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handlePlanSelect = (planName, planPrice) => {
+    setSelectedPlan({ name: planName, price: planPrice });
+    // Scroll to contact form
+    setTimeout(() => {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   return (
@@ -278,7 +256,7 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Card 1 */}
-            <div className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/5 p-8 hover:border-white/20 transition backdrop-blur-md hover:shadow-[0_0_30px_rgba(0,255,255,0.3)]">
+            <div className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/5 p-8 hover:border-white/20 transition backdrop-blur-md hover:shadow-[0_0_30px_rgba(0,255,255,0.2)]">
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 to-transparent opacity-0 group-hover:opacity-100 transition" />
               <div className="relative z-10">
                 <div className="w-12 h-12 rounded border border-cyan-400 flex items-center justify-center mb-6">
@@ -301,7 +279,7 @@ export default function App() {
             </div>
 
             {/* Card 2 */}
-            <div className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/5 p-8 hover:border-white/20 transition backdrop-blur-md hover:shadow-[0_0_30px_rgba(234,179,8,0.3)]">
+            <div className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/5 p-8 hover:border-white/20 transition backdrop-blur-md hover:shadow-[0_0_30px_rgba(234,179,8,0.2)]">
               <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/0 to-transparent opacity-0 group-hover:opacity-100 transition" />
               <div className="relative z-10">
                 <div className="w-12 h-12 rounded border border-yellow-400 flex items-center justify-center mb-6">
@@ -324,7 +302,7 @@ export default function App() {
             </div>
 
             {/* Card 3 */}
-            <div className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/5 p-8 hover:border-white/20 transition backdrop-blur-md hover:shadow-[0_0_30px_rgba(168,85,247,0.3)]">
+            <div className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/5 p-8 hover:border-white/20 transition backdrop-blur-md hover:shadow-[0_0_30px_rgba(168,85,24,0.2)]">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-transparent opacity-0 group-hover:opacity-100 transition" />
               <div className="relative z-10">
                 <div className="w-12 h-12 rounded border border-purple-400 flex items-center justify-center mb-6">
@@ -362,10 +340,10 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {[
-              { num: '01', phase: 'PHASE_01', title: 'Audit', subtitle: 'System Diagnosis', desc: 'We dissect your current operations — identifying bottlenecks, redundant processes, and automation opportunities with precision data analysis.' },
-              { num: '02', phase: 'PHASE_02', title: 'Architecture', subtitle: 'Blueprint Engineering', desc: 'A precision-designed automation blueprint is crafted — selecting optimal AI models, integration points, and execution sequences.' },
-              { num: '03', phase: 'PHASE_03', title: 'Automation', subtitle: 'Engine Deployment', desc: 'We build and deploy your custom AI engine: fully integrated, rigorously tested, and wired to your existing systems.' },
-              { num: '04', phase: 'PHASE_04', title: 'Acceleration', subtitle: 'Continuous Optimization', desc: 'Post-launch, our systems continuously monitor, learn, and self-optimize — compounding results every single day.' }
+              { num: '01', phase: 'PHASE_01', title: 'Audit', subtitle: 'System Diagnosis', desc: 'We dissect your current operations — identifying bottlenecks, redundant processes, and automation opportunities.' },
+              { num: '02', phase: 'PHASE_02', title: 'Architecture', subtitle: 'Blueprint Engineering', desc: 'A precision-designed automation blueprint is crafted — selecting optimal AI models, workflows, and integrations.' },
+              { num: '03', phase: 'PHASE_03', title: 'Automation', subtitle: 'Engine Deployment', desc: 'We build and deploy your custom AI engine: fully integrated, rigorously tested, and wired into production.' },
+              { num: '04', phase: 'PHASE_04', title: 'Acceleration', subtitle: 'Continuous Optimization', desc: 'Post-launch, our systems continuously monitor, learn, and self-optimize — compounding returns over time.' },
             ].map((step, idx) => {
               const colors = [
                 { bg: 'bg-cyan-500/10', border: 'border-cyan-400', text: 'text-cyan-400' },
@@ -467,9 +445,9 @@ export default function App() {
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Pricing Section - Simplified */}
       <section id="pricing" className="py-20 px-6 border-t border-cyan-500/10">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <div className="text-cyan-400 text-sm font-mono mb-4">// TRANSPARENT PRICING</div>
             <h2 className="text-5xl font-bold mb-4">
@@ -479,49 +457,28 @@ export default function App() {
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">All plans include free audit, custom roadmap, and money-back guarantee</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Pricing Options Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {pricingPlans.map((plan, idx) => (
-              <div
-                key={idx}
-                className={`relative rounded-lg border p-8 backdrop-blur-md transition ${
-                  plan.best
-                    ? 'border-cyan-400 bg-cyan-500/10 shadow-[0_0_30px_rgba(0,255,255,0.3)] transform md:scale-105'
-                    : 'border-white/10 bg-white/5 hover:border-white/20'
-                }`}
-              >
-                {plan.best && (
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-cyan-400 text-black px-4 py-1 rounded-full text-sm font-bold">
-                    Most Popular
-                  </div>
-                )}
+              <div key={idx} className="text-center p-8 rounded-lg border border-white/10 bg-white/5 hover:border-cyan-400/50 hover:shadow-[0_0_20px_rgba(0,255,255,0.2)] transition backdrop-blur-md">
                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <p className="text-gray-400 text-sm mb-6">{plan.description}</p>
+                <p className="text-gray-400 text-sm mb-4">{plan.description}</p>
                 <div className="mb-6">
-                  <span className="text-4xl font-bold">{plan.price}</span>
-                  <span className="text-gray-400 text-sm ml-2">{plan.period}</span>
+                  <span className="text-4xl font-bold text-cyan-400">{plan.price}</span>
+                  {plan.price !== 'Custom' && <span className="text-gray-400 text-sm ml-2">/month</span>}
                 </div>
-
-                <button className={`w-full mb-8 px-6 py-3 rounded font-semibold transition transform hover:scale-105 ${
-                  plan.best
-                    ? 'bg-cyan-400 text-black hover:bg-cyan-300'
-                    : 'border border-cyan-400 text-cyan-400 hover:bg-cyan-400/10'
-                }`}>
+                <button
+                  onClick={() => handlePlanSelect(plan.name, plan.price)}
+                  className="w-full mb-6 px-6 py-3 rounded font-semibold transition transform hover:scale-105 bg-cyan-400 text-black hover:bg-cyan-300"
+                >
                   Get Started
                 </button>
-
-                <div className="space-y-4">
-                  {plan.features.map((feature, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-300 text-sm">{feature}</span>
-                    </div>
-                  ))}
-                </div>
+                <p className="text-sm text-gray-400">Click to inquire and send via email</p>
               </div>
             ))}
           </div>
 
-          {/* Comparison Table */}
+          {/* Feature Comparison Table */}
           <div className="mt-16">
             <h3 className="text-3xl font-bold mb-8 text-center">Feature Comparison</h3>
             <div className="overflow-x-auto">
@@ -605,7 +562,7 @@ export default function App() {
             </h2>
 
             <p className="text-gray-300 text-lg mb-8">
-              We're so confident in our results that we offer a full 30-day money-back guarantee. If you don't see measurable improvements in your automation metrics, we'll refund you completely. No questions asked.
+              We're so confident in our results that we offer a full 30-day money-back guarantee. If you don't see measurable improvements in your automation metrics, we'll refund you completely.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -707,7 +664,7 @@ export default function App() {
           <div className="text-center mb-12">
             <div className="text-cyan-400 text-sm font-mono mb-4">// INITIATE ENGAGEMENT</div>
             <h2 className="text-5xl font-bold mb-4">Ready to Build Your Digital Twin?</h2>
-            <p className="text-gray-400">Schedule a strategy call. We'll audit your workflow, identify your highest-leverage automation opportunities, and present a custom roadmap — in 48 hours.</p>
+            <p className="text-gray-400">Schedule a strategy call or inquire about pricing. We'll audit your workflow, identify your highest-leverage automation opportunities, and present a custom roadmap — in 48 hours.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 text-center text-sm">
@@ -723,6 +680,15 @@ export default function App() {
           >
             <input type="text" name="_honey" style={{ display: 'none' }} />
             <input type="hidden" name="_captcha" value="false" />
+
+            {selectedPlan && (
+              <div className="p-4 bg-cyan-500/20 border border-cyan-400/50 rounded-lg">
+                <p className="text-cyan-400 font-semibold">Plan Selected: {selectedPlan.name}</p>
+                <p className="text-gray-300 text-sm">Price: {selectedPlan.price}</p>
+              </div>
+            )}
+
+            <input type="hidden" name="selectedPlan" value={selectedPlan ? `${selectedPlan.name} - ${selectedPlan.price}` : 'Not specified'} />
 
             <input
               type="text"
@@ -759,7 +725,7 @@ export default function App() {
               type="submit"
               className="w-full bg-cyan-400 text-black px-8 py-3 rounded font-semibold hover:bg-cyan-300 transition transform hover:scale-105 flex items-center justify-center gap-2"
             >
-              Book My Strategy Call <ArrowRight className="w-5 h-5" />
+              Send Inquiry <ArrowRight className="w-5 h-5" />
             </button>
           </form>
 
@@ -789,14 +755,14 @@ export default function App() {
         </div>
       </footer>
 
-      {/* Back to Top Button - Professional */}
+      {/* Back to Top Button */}
       {showTopBtn && (
         <button
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 z-50 border border-cyan-400 bg-black p-3 rounded-lg hover:bg-cyan-400/20 transition transform hover:scale-110 hover:shadow-[0_0_20px_rgba(0,255,255,0.4)]"
           aria-label="Back to top"
         >
-          <ChevronDown className="w-5 h-5 text-cyan-400 rotate-180 group-hover:animate-bounce" />
+          <ChevronDown className="w-5 h-5 text-cyan-400 rotate-180" />
         </button>
       )}
 
